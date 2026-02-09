@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marara Joyería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Marara Joyería</a>
+      <ul class="nav-links">
+        <li><a href="anillos.html">Anillos</a></li>
+        <li><a href="collares.html">Collares</a></li>
+        <li><a href="pendientes.html">Pendientes</a></li>
+        <li><a href="pulseras.html">Pulseras</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+      <button class="cart-btn" aria-label="Carrito">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg" role="img" aria-label="Joyas de fondo"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-tag">Joyas que cuentan tu historia</p>
+        <h1 class="hero-title">Belleza atemporal.<br>Diseño excepcional.</h1>
+        <p class="hero-subtitle"></p>
+        <div class="hero-menu">
+          <span class="hero-menu-label">Explora por categoría</span>
+          <div class="hero-menu-grid">
+            <a href="anillos.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <img src="images/anillos/1.jpg" alt="Anillos" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'hero-menu-icon\'>◆</span>'">
+              </div>
+              <span class="hero-menu-text">Anillos</span>
+            </a>
+            <a href="collares.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <img src="images/collares/1.jpg" alt="Collares" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'hero-menu-icon\'>◇</span>'">
+              </div>
+              <span class="hero-menu-text">Collares</span>
+            </a>
+            <a href="pendientes.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <img src="images/pendientes/1.jpg" alt="Pendientes" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'hero-menu-icon\'>○</span>'">
+              </div>
+              <span class="hero-menu-text">Pendientes</span>
+            </a>
+            <a href="pulseras.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <img src="images/pulseras/1.jpg" alt="Pulseras" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'hero-menu-icon\'>▣</span>'">
+              </div>
+              <span class="hero-menu-text">Pulseras</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>Descubre</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section id="anillos" class="section category-section">
+      <div class="container">
+        <h2 class="section-title">Anillos</h2>
+        <p class="section-subtitle">Piezas para el día a día</p>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">◆</div>
+              <img src="images/anillos/1.jpg" alt="Anillo Esmeralda" onerror="this.style.display='none'">
+              <span class="product-badge">Nuevo</span>
+            </div>
+            <div class="product-info">
+              <h3>Churumbelas</h3>
+              <p class="product-desc">3 tonos, numeración del 6-11</p>
+              <p class="product-price">$ ?</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">◆</div>
+              <img src="images/anillos/2.jpg" alt="Anillo Solitario" onerror="this.style.display='none'">
+              <span class="product-badge product-badge-warning">Se agotan</span>
+            </div>
+            <div class="product-info">
+              <h3>Proximamente</h3>
+              <p class="product-desc">Detalles</p>
+              <p class="product-price">$ ?</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">◆</div>
+              <img src="images/anillos/3.jpg" alt="Anillo Eternidad" onerror="this.style.display='none'">
+            </div>
+            <div class="product-info">
+              <h3>Proximamente</h3>
+              <p class="product-desc">Detalles</p>
+              <p class="product-price">$ ?</p>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="anillos.html" class="btn">Ver más anillos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="collares" class="section category-section category-section-alt">
+      <div class="container">
+        <h2 class="section-title">Collares</h2>
+        <p class="section-subtitle">Colgantes, gargantillas y cadenas de oro y plata</p>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">◇</div>
+              <img src="images/collares/1.jpg" alt="Collar Luna" onerror="this.style.display='none'">
+              <span class="product-badge">Nuevo</span>
+            </div>
+            <div class="product-info">
+              <h3>Collar Perla</h3>
+              <p class="product-desc">Cadena de Oro laminado y una perla</p>
+              <p class="product-price">$ 79</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">◇</div>
+              <img src="images/collares/2.jpg" alt="Gargantilla Dorada" onerror="this.style.display='none'">
+              <span class="product-badge product-badge-warning">Se agotan</span>
+            </div>
+            <div class="product-info">
+              <h3>Collar Van Cleef</h3>
+              <p class="product-desc">Acero inoxidable, detalles en color rojo</p>
+              <p class="product-price">$ 100</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">◇</div>
+              <img src="images/collares/3.jpg" alt="Colgante Corazón" onerror="this.style.display='none'">
+            </div>
+            <div class="product-info">
+              <h3>Juego Van Cleef</h3>
+              <p class="product-desc">Collar y aretes, acero inoxidable, detalles en color blanco</p>
+              <p class="product-price">$ 140</p>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="collares.html" class="btn">Ver más collares</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendientes" class="section category-section">
+      <div class="container">
+        <h2 class="section-title">Pendientes</h2>
+        <p class="section-subtitle">Aros, gotas, studs y piezas de statement</p>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">○</div>
+              <img src="images/pendientes/1.jpg" alt="Pendientes Diamante" onerror="this.style.display='none'">
+              <span class="product-badge product-badge-warning">Se agotan</span>
+            </div>
+            <div class="product-info">
+              <h3>Arracadas doradas</h3>
+              <p class="product-desc">Laminado en Oro</p>
+              <p class="product-price">$ 105</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">○</div>
+              <img src="images/pendientes/2.jpg" alt="Aros Dorados" onerror="this.style.display='none'">
+            </div>
+            <div class="product-info">
+              <h3>Aros Dorados</h3>
+              <p class="product-desc">Laminado en Oro.</p>
+              <p class="product-price">$ 65 - $ 85</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">○</div>
+              <img src="images/pendientes/3.jpg" alt="Gotas de Perla" onerror="this.style.display='none'">
+              <span class="product-badge">Nuevo</span>
+            </div>
+            <div class="product-info">
+              <h3>Mariquitas</h3>
+              <p class="product-desc">Diferentes colores</p>
+              <p class="product-price">$ 60</p>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="pendientes.html" class="btn">Ver más pendientes</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pulseras" class="section category-section category-section-alt">
+      <div class="container">
+        <h2 class="section-title">Pulseras</h2>
+        <p class="section-subtitle">Tenacillas, brazaletes y pulseras de eslabones</p>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">▣</div>
+              <img src="images/pulseras/1.jpg" alt="Pulsera Tennis" onerror="this.style.display='none'">
+              <span class="product-badge">Nuevo</span>
+            </div>
+            <div class="product-info">
+              <h3>Proximamente</h3>
+              <p class="product-desc">Detalles</p>
+              <p class="product-price">$ ?</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">▣</div>
+              <img src="images/pulseras/2.jpg" alt="Eslabones Dorados" onerror="this.style.display='none'">
+              <span class="product-badge product-badge-warning">Se agotan</span>
+            </div>
+            <div class="product-info">
+              <h3>Proximamente</h3>
+              <p class="product-desc">Detalles</p>
+              <p class="product-price">$ ?</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <div class="product-placeholder" aria-hidden="true">▣</div>
+              <img src="images/pulseras/3.jpg" alt="Tenacilla Charm" onerror="this.style.display='none'">
+            </div>
+            <div class="product-info">
+              <h3>Proximamente</h3>
+              <p class="product-desc">Detalles</p>
+              <p class="product-price">$ ?</p>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="pulseras.html" class="btn">Ver más pulseras</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="section about">
+      <div class="container about-grid">
+        <div class="about-content">
+          <h2 class="section-title">Los mejores accesorios</h2>
+          <p></p>
+          <ul class="about-features">
+            <li>✓ Los mejores precios</li>
+            <li>✓ La mejor calidad</li>
+            <li>✓ Entregas directas o envios</li>
+          </ul>
+        </div>
+        <div class="about-visual">
+          <div class="about-image"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact">
+      <div class="container">
+        <h2 class="section-title">¿Hablamos?</h2>
+        <p class="section-subtitle">¿Buscas algo especial? Escríbenos y te asesoramos.</p>
+        <form class="contact-form">
+          <div class="form-row">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+          </div>
+          <textarea placeholder="Cuéntanos qué buscas o tu consulta..." rows="4"></textarea>
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Marara Joyería</span>
+          <p>Joyería fina</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Envíos y devoluciones</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Pinterest">Pinterest</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Marara Joyería. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
