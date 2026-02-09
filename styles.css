@@ -324,6 +324,27 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .product-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; }
 .product-price { font-size: 1.15rem; font-weight: 500; color: var(--gold-dark); }
+.product-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.product-action-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+}
+.btn-whatsapp {
+  border-color: #25d366;
+  color: #1f8f49;
+}
+.btn-whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+}
 
 .about { padding: 5rem 2rem; background: var(--bg-white); }
 .about-grid {
