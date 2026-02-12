@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anillos | Marara Joyería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="logo">Marara Joyería</a>
+      <ul class="nav-links">
+        <li><a href="anillos.html">Anillos</a></li>
+        <li><a href="collares.html">Collares</a></li>
+        <li><a href="pendientes.html">Pendientes</a></li>
+        <li><a href="pulseras.html">Pulseras</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+      <button class="cart-btn" aria-label="Carrito">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="category-hero">
+      <div class="category-hero-bg" style="background-image: url('images/anillos/1.jpg');" role="img" aria-label="Colección de anillos de Marara Joyería"></div>
+      <div class="category-hero-overlay"></div>
+      <div class="category-hero-content">
+        <div class="category-hero-breadcrumb">
+          <a href="index.html">Inicio</a> / Anillos
+        </div>
+        <h1 class="section-title">Anillos</h1>
+        <p class="section-subtitle">Piezas para el día a día y momentos especiales.</p>
+      </div>
+    </section>
+
+    <section class="section category-section">
+      <div class="container">
+        <h2 class="section-title">Colección completa</h2>
+        <p class="section-subtitle">Explora todos los anillos disponibles en Marara Joyería.</p>
+        <div class="products-grid" data-category="anillos">
+          <!-- Productos cargados desde Firestore (catalog.js) -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Marara Joyería</span>
+          <p>Joyería fina</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Envíos y devoluciones</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Pinterest">Pinterest</a>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Marara Joyería. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="module" src="catalog.js"></script>
+</body>
+</html>
+

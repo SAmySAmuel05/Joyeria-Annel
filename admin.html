@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración | Marara Joyería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin-wrap {
+      min-height: 100vh;
+      padding: 6rem 2rem 4rem;
+      background: var(--bg-cream);
+    }
+    .admin-container {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .admin-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .admin-header .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 0.12em;
+      color: var(--gold-dark);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .admin-header h1 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .admin-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .admin-form {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+    .admin-form .form-group {
+      margin-bottom: 1.35rem;
+    }
+    .admin-form label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .admin-form input[type="text"],
+    .admin-form input[type="number"],
+    .admin-form input[type="file"],
+    .admin-form select,
+    .admin-form textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-white);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: border-color var(--transition);
+    }
+    .admin-form input:focus,
+    .admin-form select:focus,
+    .admin-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .admin-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .admin-form .btn-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 1rem;
+      background: var(--gold);
+      color: var(--bg-white);
+      border: 1px solid var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .admin-form .btn-submit:hover:not(:disabled) {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+    .admin-form .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .admin-back {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .admin-back:hover {
+      color: var(--gold);
+    }
+    .admin-msg {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      display: none;
+    }
+    .admin-msg.success {
+      display: block;
+      background: rgba(33, 150, 83, 0.12);
+      color: #1b5e20;
+    }
+    .admin-msg.error {
+      display: block;
+      background: rgba(198, 40, 40, 0.12);
+      color: #b71c1c;
+    }
+    .admin-form input[type="email"],
+    .admin-form input[type="password"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-white);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: border-color var(--transition);
+    }
+    .admin-form input[type="email"]:focus,
+    .admin-form input[type="password"]:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .admin-logout {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      text-decoration: underline;
+    }
+    .admin-logout:hover {
+      color: var(--gold);
+    }
+    .admin-panel,
+    .admin-login-panel {
+      display: none;
+    }
+    .admin-panel.visible,
+    .admin-login-panel.visible {
+      display: block;
+    }
+    .admin-loading {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+    <div class="admin-container">
+      <div id="admin-loading" class="admin-loading">Comprobando sesión…</div>
+
+      <div id="admin-login-panel" class="admin-login-panel">
+        <header class="admin-header">
+          <a href="index.html" class="logo">Marara Joyería</a>
+          <h1>Iniciar sesión</h1>
+          <p>Acceso al panel de administración</p>
+        </header>
+        <form id="login-form" class="admin-form">
+          <div class="form-group">
+            <label for="login-email">Correo electrónico</label>
+            <input type="email" id="login-email" name="email" required placeholder="tu@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="password" required placeholder="••••••••" autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn-submit" id="btn-login">Entrar</button>
+          <div id="login-msg" class="admin-msg" role="status"></div>
+        </form>
+      </div>
+
+      <div id="admin-panel" class="admin-panel">
+        <header class="admin-header">
+          <a href="index.html" class="logo">Marara Joyería</a>
+          <h1>Alta de producto</h1>
+          <p>Sube un nuevo artículo al catálogo</p>
+        </header>
+
+      <form id="admin-form" class="admin-form">
+        <div class="form-group">
+          <label for="nombre">Nombre del producto</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Ej. Arracadas doradas">
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Detalles / Descripción</label>
+          <textarea id="descripcion" name="descripcion" placeholder="Ej. Laminado en oro"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input type="text" id="precio" name="precio" required placeholder="Ej. $ 105 o $ 65 - $ 85">
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoría</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecciona una categoría</option>
+            <option value="anillos">Anillos</option>
+            <option value="collares">Collares</option>
+            <option value="pendientes">Pendientes</option>
+            <option value="pulseras">Pulseras</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="imagen">Imagen del producto</label>
+          <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn-submit" id="btn-submit">Subir producto</button>
+        <div id="admin-msg" class="admin-msg" role="status"></div>
+      </form>
+
+        <button type="button" id="btn-logout" class="admin-logout">Cerrar sesión</button>
+        <a href="index.html" class="admin-back">← Volver al catálogo</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
