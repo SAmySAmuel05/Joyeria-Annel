@@ -5,8 +5,8 @@
 import { firebaseConfig } from './firebase-config.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js';
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -106,8 +106,21 @@ function renderProductsList() {
       form.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
+    const deleteBtn = document.createElement('button');
+    deleteBtn.type = 'button';
+    deleteBtn.className = 'admin-product-delete';
+    deleteBtn.textContent = 'Eliminar';
+    deleteBtn.addEventListener('click', () => {
+      deleteProduct(product, editBtn, deleteBtn);
+    });
+
+    const actions = document.createElement('div');
+    actions.className = 'admin-product-actions';
+    actions.appendChild(editBtn);
+    actions.appendChild(deleteBtn);
+
     item.appendChild(name);
-    item.appendChild(editBtn);
+    item.appendChild(actions);
     fragment.appendChild(item);
   });
 
@@ -156,6 +169,51 @@ function clearEditMode(resetForm = false) {
   }
   updateFormModeUI();
   renderProductsList();
+}
+
+async function deleteProduct(product, editBtn, deleteBtn) {
+  if (!auth.currentUser) {
+    showMsg(msgEl, 'Debes iniciar sesión para eliminar productos.', 'error');
+    return;
+  }
+
+  const confirmed = window.confirm('¿Estás seguro de que quieres eliminar este producto? Esta acción no se puede deshacer');
+  if (!confirmed) return;
+
+  editBtn.disabled = true;
+  deleteBtn.disabled = true;
+  hideMsg(msgEl);
+
+  try {
+    if (product?.imageUrl) {
+      try {
+        const imageRef = ref(storage, product.imageUrl);
+        await deleteObject(imageRef);
+      } catch (imageErr) {
+        const code = imageErr?.code || '';
+        if (code !== 'storage/object-not-found') {
+          throw imageErr;
+        }
+      }
+    }
+
+    await deleteDoc(doc(db, 'productos', product.id));
+
+    productsCache = productsCache.filter((item) => item.id !== product.id);
+    if (editingProductId === product.id) {
+      clearEditMode(true);
+    } else {
+      renderProductsList();
+    }
+
+    showMsg(msgEl, 'Producto eliminado con éxito');
+    await loadProductsList();
+  } catch (err) {
+    console.error(err);
+    showMsg(msgEl, 'Error al eliminar: ' + (err.message || 'No se pudo eliminar el producto.'), 'error');
+    editBtn.disabled = false;
+    deleteBtn.disabled = false;
+  }
 }
 
 // Login

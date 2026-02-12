@@ -186,6 +186,31 @@
       background: var(--gold);
       color: var(--bg-white);
     }
+    .admin-product-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-shrink: 0;
+    }
+    .admin-product-delete {
+      border: 1px solid #c62828;
+      background: rgba(198, 40, 40, 0.06);
+      color: #b71c1c;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.7rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+    .admin-product-delete:hover:not(:disabled) {
+      background: #c62828;
+      color: var(--bg-white);
+    }
+    .admin-product-delete:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
     .admin-product-empty {
       margin: 0;
       text-align: center;
@@ -332,7 +357,7 @@
 
       <section class="admin-manage" aria-labelledby="admin-manage-title">
         <h2 id="admin-manage-title">Gestión de productos</h2>
-        <p>Selecciona un producto para editar su información.</p>
+        <p>Selecciona un producto para editarlo o eliminarlo.</p>
         <div id="admin-product-list" class="admin-product-list">
           <p class="admin-product-empty">Cargando productos…</p>
         </div>
