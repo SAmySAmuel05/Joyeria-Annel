@@ -102,6 +102,98 @@
       opacity: 0.7;
       cursor: not-allowed;
     }
+    .admin-form-actions {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .admin-form .btn-cancel {
+      width: 100%;
+      padding: 0.9rem;
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color var(--transition), border-color var(--transition);
+      display: none;
+    }
+    .admin-form .btn-cancel.visible {
+      display: block;
+    }
+    .admin-form .btn-cancel:hover:not(:disabled) {
+      color: var(--gold-dark);
+      border-color: var(--gold);
+    }
+    .admin-form .btn-cancel:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    .admin-manage {
+      margin-top: 1.5rem;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+    .admin-manage h2 {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .admin-manage p {
+      margin: 0 0 1rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .admin-product-list {
+      display: grid;
+      gap: 0.65rem;
+    }
+    .admin-product-item {
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      background: var(--bg-white);
+    }
+    .admin-product-item.is-editing {
+      border-color: var(--gold);
+      background: rgba(194, 149, 76, 0.08);
+    }
+    .admin-product-name {
+      margin: 0;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .admin-product-edit {
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold-dark);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.7rem;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+    .admin-product-edit:hover {
+      background: var(--gold);
+      color: var(--bg-white);
+    }
+    .admin-product-empty {
+      margin: 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      padding: 0.75rem;
+      border: 1px dashed var(--border);
+    }
     .admin-back {
       display: inline-block;
       margin-top: 1.5rem;
@@ -200,8 +292,8 @@
       <div id="admin-panel" class="admin-panel">
         <header class="admin-header">
           <a href="index.html" class="logo">Marara Joyería</a>
-          <h1>Alta de producto</h1>
-          <p>Sube un nuevo artículo al catálogo</p>
+          <h1>Gestión de productos</h1>
+          <p>Crea y edita artículos del catálogo</p>
         </header>
 
       <form id="admin-form" class="admin-form">
@@ -229,11 +321,22 @@
         </div>
         <div class="form-group">
           <label for="imagen">Imagen del producto</label>
-          <input type="file" id="imagen" name="imagen" accept="image/*" required>
+          <input type="file" id="imagen" name="imagen" accept="image/*">
         </div>
-        <button type="submit" class="btn-submit" id="btn-submit">Subir producto</button>
+        <div class="admin-form-actions">
+          <button type="submit" class="btn-submit" id="btn-submit">Subir producto</button>
+          <button type="button" class="btn-cancel" id="btn-cancel-edit">Cancelar edición</button>
+        </div>
         <div id="admin-msg" class="admin-msg" role="status"></div>
       </form>
+
+      <section class="admin-manage" aria-labelledby="admin-manage-title">
+        <h2 id="admin-manage-title">Gestión de productos</h2>
+        <p>Selecciona un producto para editar su información.</p>
+        <div id="admin-product-list" class="admin-product-list">
+          <p class="admin-product-empty">Cargando productos…</p>
+        </div>
+      </section>
 
         <button type="button" id="btn-logout" class="admin-logout">Cerrar sesión</button>
         <a href="index.html" class="admin-back">← Volver al catálogo</a>
