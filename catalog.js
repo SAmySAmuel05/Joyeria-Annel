@@ -17,7 +17,8 @@ const CATEGORY_PLACEHOLDER = {
   pulseras: '▣',
   arracadas: '○',
   dijes: '◆',
-  cadenas: '◇'
+  cadenas: '◇',
+  broqueles: '◆'
 };
 
 function escapeHtml(str) {
@@ -56,7 +57,7 @@ function renderLoading() {
 }
 
 function renderEmpty(category) {
-  const labels = { anillos: 'anillos', collares: 'collares', pendientes: 'pendientes', pulseras: 'pulseras', arracadas: 'arracadas', dijes: 'dijes', cadenas: 'cadenas' };
+  const labels = { anillos: 'anillos', collares: 'collares', pendientes: 'pendientes', pulseras: 'pulseras', arracadas: 'arracadas', dijes: 'dijes', cadenas: 'cadenas', broqueles: 'broqueles de plata' };
   const label = labels[category] || category;
   return '<p class="catalog-empty" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:2rem;">Aún no hay productos en ' + escapeHtml(label) + '.</p>';
 }

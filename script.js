@@ -84,7 +84,7 @@ function getCategoryFromCard(card) {
     const section = card.closest('section');
     if (section && section.id) return section.id;
   }
-  const map = { anillos: 'anillos', collares: 'collares', pendientes: 'pendientes', pulseras: 'pulseras', arracadas: 'arracadas', dijes: 'dijes', cadenas: 'cadenas' };
+  const map = { anillos: 'anillos', collares: 'collares', pendientes: 'pendientes', pulseras: 'pulseras', arracadas: 'arracadas', dijes: 'dijes', cadenas: 'cadenas', broqueles: 'broqueles' };
   return map[path] || 'producto';
 }
 
