@@ -1,5 +1,5 @@
 // Número de WhatsApp (México)
-const WHATSAPP_NUMBER = '525582573307';
+const WHATSAPP_NUMBER = '525561056674';
 const CART_STORAGE_KEY = 'marara_cart';
 
 // Header scroll effect
