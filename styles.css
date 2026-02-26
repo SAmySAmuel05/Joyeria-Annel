@@ -91,7 +91,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero {
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
-  position: relative; padding: 6rem 2rem 4rem;
+  position: relative; padding: 6rem 2rem 5.5rem;
 }
 .hero-bg {
   position: absolute; inset: 0;
@@ -126,6 +126,7 @@ img { max-width: 100%; height: auto; display: block; }
   align-items: center;
   gap: 1.25rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .hero-menu-label {
   font-size: 0.75rem;
@@ -213,7 +214,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
   z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
   font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--text-muted);
