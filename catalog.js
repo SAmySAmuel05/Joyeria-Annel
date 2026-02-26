@@ -14,7 +14,10 @@ const CATEGORY_PLACEHOLDER = {
   anillos: '◆',
   collares: '◇',
   pendientes: '○',
-  pulseras: '▣'
+  pulseras: '▣',
+  arracadas: '○',
+  dijes: '◆',
+  cadenas: '◇'
 };
 
 function escapeHtml(str) {
@@ -53,7 +56,7 @@ function renderLoading() {
 }
 
 function renderEmpty(category) {
-  const labels = { anillos: 'anillos', collares: 'collares', pendientes: 'pendientes', pulseras: 'pulseras' };
+  const labels = { anillos: 'anillos', collares: 'collares', pendientes: 'pendientes', pulseras: 'pulseras', arracadas: 'arracadas', dijes: 'dijes', cadenas: 'cadenas' };
   const label = labels[category] || category;
   return '<p class="catalog-empty" style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:2rem;">Aún no hay productos en ' + escapeHtml(label) + '.</p>';
 }
@@ -62,7 +65,9 @@ function paintGrids(products) {
   const grids = document.querySelectorAll('.products-grid[data-category]');
   grids.forEach((grid) => {
     const category = grid.dataset.category;
-    const list = (products || []).filter((p) => (p.categoria || '') === category);
+    let list = (products || []).filter((p) => (p.categoria || '') === category);
+    const limit = grid.dataset.limit ? parseInt(grid.dataset.limit, 10) : 0;
+    if (limit > 0) list = list.slice(0, limit);
     if (list.length === 0) {
       grid.innerHTML = renderEmpty(category);
       return;

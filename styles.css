@@ -139,7 +139,13 @@ img { max-width: 100%; height: auto; display: block; }
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
+}
+@media (min-width: 700px) {
+  .hero-menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 560px;
+  }
 }
 .hero-menu-item {
   display: flex;

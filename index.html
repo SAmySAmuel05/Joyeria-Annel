@@ -18,6 +18,9 @@
         <li><a href="collares.html">Collares</a></li>
         <li><a href="pendientes.html">Pendientes</a></li>
         <li><a href="pulseras.html">Pulseras</a></li>
+        <li><a href="arracadas.html">Arracadas</a></li>
+        <li><a href="dijes.html">Dijes</a></li>
+        <li><a href="cadenas.html">Cadenas</a></li>
         <li><a href="index.html#nosotros">Nosotros</a></li>
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
@@ -63,6 +66,24 @@
               </div>
               <span class="hero-menu-text">Pulseras</span>
             </a>
+            <a href="arracadas.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <span class="hero-menu-icon">○</span>
+              </div>
+              <span class="hero-menu-text">Arracadas</span>
+            </a>
+            <a href="dijes.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <span class="hero-menu-icon">◆</span>
+              </div>
+              <span class="hero-menu-text">Dijes</span>
+            </a>
+            <a href="cadenas.html" class="hero-menu-item">
+              <div class="hero-menu-image">
+                <span class="hero-menu-icon">◇</span>
+              </div>
+              <span class="hero-menu-text">Cadenas</span>
+            </a>
           </div>
         </div>
       </div>
@@ -76,7 +97,7 @@
       <div class="container">
         <h2 class="section-title">Anillos</h2>
         <p class="section-subtitle">Piezas para el día a día</p>
-        <div class="products-grid" data-category="anillos">
+        <div class="products-grid" data-category="anillos" data-limit="3">
           <!-- Productos cargados desde Firestore (catalog.js) -->
         </div>
         <div class="section-cta">
@@ -89,7 +110,7 @@
       <div class="container">
         <h2 class="section-title">Collares</h2>
         <p class="section-subtitle">Colgantes, gargantillas y cadenas de oro y plata</p>
-        <div class="products-grid" data-category="collares">
+        <div class="products-grid" data-category="collares" data-limit="3">
           <!-- Productos cargados desde Firestore (catalog.js) -->
         </div>
         <div class="section-cta">
@@ -102,7 +123,7 @@
       <div class="container">
         <h2 class="section-title">Pendientes</h2>
         <p class="section-subtitle">Aros, gotas, studs y piezas de statement</p>
-        <div class="products-grid" data-category="pendientes">
+        <div class="products-grid" data-category="pendientes" data-limit="3">
           <!-- Productos cargados desde Firestore (catalog.js) -->
         </div>
         <div class="section-cta">
@@ -115,11 +136,50 @@
       <div class="container">
         <h2 class="section-title">Pulseras</h2>
         <p class="section-subtitle">Tenacillas, brazaletes y pulseras de eslabones</p>
-        <div class="products-grid" data-category="pulseras">
+        <div class="products-grid" data-category="pulseras" data-limit="3">
           <!-- Productos cargados desde Firestore (catalog.js) -->
         </div>
         <div class="section-cta">
           <a href="pulseras.html" class="btn">Ver más pulseras</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="arracadas" class="section category-section">
+      <div class="container">
+        <h2 class="section-title">Arracadas</h2>
+        <p class="section-subtitle">Aros y arracadas para destacar</p>
+        <div class="products-grid" data-category="arracadas" data-limit="3">
+          <!-- Productos cargados desde Firestore (catalog.js) -->
+        </div>
+        <div class="section-cta">
+          <a href="arracadas.html" class="btn">Ver más arracadas</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="dijes" class="section category-section category-section-alt">
+      <div class="container">
+        <h2 class="section-title">Dijes</h2>
+        <p class="section-subtitle">Colgantes y dijes para personalizar tus piezas</p>
+        <div class="products-grid" data-category="dijes" data-limit="3">
+          <!-- Productos cargados desde Firestore (catalog.js) -->
+        </div>
+        <div class="section-cta">
+          <a href="dijes.html" class="btn">Ver más dijes</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cadenas" class="section category-section">
+      <div class="container">
+        <h2 class="section-title">Cadenas</h2>
+        <p class="section-subtitle">Cadenas de oro y plata para combinar</p>
+        <div class="products-grid" data-category="cadenas" data-limit="3">
+          <!-- Productos cargados desde Firestore (catalog.js) -->
+        </div>
+        <div class="section-cta">
+          <a href="cadenas.html" class="btn">Ver más cadenas</a>
         </div>
       </div>
     </section>
